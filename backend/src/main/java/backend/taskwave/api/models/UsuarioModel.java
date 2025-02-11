@@ -9,12 +9,13 @@ import jakarta.validation.constraints.Size;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 
 @Entity
-@Data
 @Getter
 @Setter
+@ToString
 @Table(name = "Tb_usuarios")
 public class UsuarioModel {
 
@@ -45,4 +46,16 @@ public class UsuarioModel {
 
 
 
+
+
+
+
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
 }
