@@ -26,7 +26,7 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/register").permitAll() // permite acesso publico a essas rotas.
+                        .requestMatchers("/api/register", "/api/login").permitAll() // permite acesso publico a essas rotas.
                         .anyRequest().authenticated()
                         //.anyRequest().permitAll()
                 )
