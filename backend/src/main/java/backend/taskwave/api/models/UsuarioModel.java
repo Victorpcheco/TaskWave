@@ -1,6 +1,7 @@
 package backend.taskwave.api.models;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -24,8 +25,8 @@ public class UsuarioModel {
     private Long id;
 
 
-    @Column(name = "nome")
     @NotBlank(message = "O campo nome não pode ser vazio!")
+    @JsonProperty("nome") // <- Garante que o nome seja reconhecido no JSON
     private String nome;
 
 
@@ -57,5 +58,9 @@ public class UsuarioModel {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public String getEmail() {
+        return email;
     }
 }
