@@ -21,7 +21,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/usuarios")
 public class UsuarioController {
 
     @Autowired
