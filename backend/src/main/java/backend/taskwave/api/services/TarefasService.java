@@ -14,8 +14,8 @@ public class TarefasService {
     @Autowired
     private TarefasRepository repository;
 
-    public List<TarefasModel> listTasks(TarefasModel tarefas)   {
-        return repository.findAll();
+    public List<TarefasModel> listTasks(Long usuario_id)   {
+        return repository.findByUsuarioId(usuario_id);
     }
 
 

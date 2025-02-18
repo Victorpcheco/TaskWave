@@ -23,6 +23,10 @@ public class TarefasModel {
     @NotBlank(message = "o campo de status é obrigatório")
     private String status;
 
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private UsuarioModel usuario_id;
+
 
 
 
