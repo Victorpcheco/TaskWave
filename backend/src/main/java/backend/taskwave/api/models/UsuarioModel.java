@@ -1,6 +1,7 @@
 package backend.taskwave.api.models;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
@@ -11,6 +12,8 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+
+import java.util.List;
 
 
 @Entity
@@ -43,6 +46,7 @@ public class UsuarioModel {
             regexp = "^(?=.*[!@#$%^&*(),.?\":{}|<>]).+$",
             message = "A senha deve conter pelo menos um caractere especial.")
     private String senha;
+
 
 
 

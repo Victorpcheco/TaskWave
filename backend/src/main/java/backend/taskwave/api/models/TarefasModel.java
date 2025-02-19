@@ -1,5 +1,7 @@
 package backend.taskwave.api.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
@@ -25,15 +27,21 @@ public class TarefasModel {
 
     @ManyToOne
     @JoinColumn(name = "usuario_id")
-    private UsuarioModel usuario_id;
+    private UsuarioModel usuario;
 
+    public Long getId() {
+        return id;
+    }
 
+    public String getTitulo() {
+        return titulo;
+    }
 
+    public String getStatus() {
+        return status;
+    }
 
-
-
-
-
-
-
+    public UsuarioModel getUsuario() {
+        return usuario;
+    }
 }
