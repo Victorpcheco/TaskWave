@@ -5,6 +5,8 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Getter
 @Setter
@@ -27,10 +29,26 @@ public class TarefasModel {
     private String descricao;
 
     @Column(name = "data_criacao")
-    private String data_cracao;
+    private LocalDateTime data_criacao;
+
+    public void setUsuario_id(Long usuario_id) {
+        this.usuario_id = usuario_id;
+    }
 
     @Column(name = "usuario_id")
     private Long usuario_id;
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
 
     public Long getId() {
         return id;
@@ -48,11 +66,15 @@ public class TarefasModel {
         return descricao;
     }
 
-    public String getData_cracao() {
-        return data_cracao;
+    public LocalDateTime getData_cracao() {
+        return data_criacao;
     }
 
     public Long getUsuario_id() {
         return usuario_id;
+    }
+
+    public void setData_criacao(LocalDateTime data_criacao) {
+        this.data_criacao = data_criacao;
     }
 }

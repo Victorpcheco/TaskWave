@@ -1,6 +1,7 @@
 package backend.taskwave.api.controllers;
 
 
+import backend.taskwave.api.dto.TarefaDTO;
 import backend.taskwave.api.models.TarefasModel;
 import backend.taskwave.api.services.TarefasService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +23,8 @@ public class TarefasController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<TarefasModel> createTask(@RequestBody TarefasModel tarefas)   {
-        TarefasModel createdTask = service.createTask(tarefas);
+    public ResponseEntity<TarefasModel> createTask(@RequestBody TarefaDTO tarefaDTO)   {
+        TarefasModel createdTask = service.createTask(tarefaDTO);
         return ResponseEntity.ok(createdTask);
     }
 
