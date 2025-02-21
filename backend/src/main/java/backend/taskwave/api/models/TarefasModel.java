@@ -1,7 +1,5 @@
 package backend.taskwave.api.models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
@@ -25,9 +23,14 @@ public class TarefasModel {
     @NotBlank(message = "o campo de status é obrigatório")
     private String status;
 
-    @ManyToOne
-    @JoinColumn(name = "usuario_id")
-    private UsuarioModel usuario;
+    @Column(name = "descricao")
+    private String descricao;
+
+    @Column(name = "data_criacao")
+    private String data_cracao;
+
+    @Column(name = "usuario_id")
+    private Long usuario_id;
 
     public Long getId() {
         return id;
@@ -41,7 +44,15 @@ public class TarefasModel {
         return status;
     }
 
-    public UsuarioModel getUsuario() {
-        return usuario;
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public String getData_cracao() {
+        return data_cracao;
+    }
+
+    public Long getUsuario_id() {
+        return usuario_id;
     }
 }

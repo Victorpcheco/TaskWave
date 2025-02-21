@@ -8,8 +8,4 @@ import java.util.List;
 
 @Repository
 public interface TarefasRepository extends JpaRepository<TarefasModel, Long> {
-
-    List<TarefasModel> findByUsuarioId(Long usuarioId);
-
-
 }

@@ -32,7 +32,7 @@ public class UsuarioController {
 
     @PostMapping("/register")
     public ResponseEntity<UsuarioModel> registerNewUser(@Valid @RequestBody UsuarioModel usuarioModel){
-        System.out.println("Recebida requisição para registrar usuário: " + usuarioModel.getEmail());
+        //System.out.println("Recebida requisição para registrar usuário: " + usuarioModel.getEmail());
         UsuarioModel usuarioRegistrado = service.registerUser(usuarioModel);
         return ResponseEntity.ok(usuarioRegistrado); // retorno 200 (ok) usuario registrado.
     }

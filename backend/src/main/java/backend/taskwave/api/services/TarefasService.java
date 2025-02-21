@@ -16,12 +16,20 @@ public class TarefasService {
     @Autowired
     private TarefasRepository repository;
 
-    public List<TarefasModel> listarTarefasPorUsuario(Long usuarioId)   {
+    /*public List<TarefasModel> listarTarefasPorUsuario(Long usuarioId)   {
         logger.info("Buscando tarefas para o usuário ID: {}", usuarioId);
         List<TarefasModel> tarefas = repository.findByUsuarioId(usuarioId);
         logger.info("Tarefas encontradas: {}", tarefas);
         return tarefas;
 
+    }*/
+
+    public List<TarefasModel> listarTasks(TarefasModel tarefas){
+       return repository.findAll();
+    }
+
+    public TarefasModel createTask(TarefasModel tarefas){
+       return repository.save(tarefas);
     }
 
 

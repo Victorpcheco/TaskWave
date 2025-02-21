@@ -4,6 +4,7 @@ package backend.taskwave.api.controllers;
 import backend.taskwave.api.models.TarefasModel;
 import backend.taskwave.api.services.TarefasService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,10 +16,15 @@ public class TarefasController {
     @Autowired
     private TarefasService service;
 
-    @GetMapping("/usuarios/{usuarioId}")
-    public List<TarefasModel> listarTarefasPorUsuario(@PathVariable Long usuarioId){
-        return service.listarTarefasPorUsuario(usuarioId);
+    @GetMapping
+    public List<TarefasModel> allTasks(TarefasModel tarefasModel){
+        return service.listarTasks(tarefasModel);
     }
 
+    @PostMapping("/create")
+    public ResponseEntity<TarefasModel> createTask(@RequestBody TarefasModel tarefas)   {
+        TarefasModel createdTask = service.createTask(tarefas);
+        return ResponseEntity.ok(createdTask);
+    }
 
 }
