@@ -2,14 +2,10 @@ package backend.taskwave.api.models;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 @Entity
-@Getter
-@Setter
 @Table(name = "Tb_tarefas")
 public class TarefasModel {
 

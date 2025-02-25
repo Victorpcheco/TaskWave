@@ -24,6 +24,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         throws ServletException, IOException {
 
         String token = request.getHeader("Authorization"); // Obtém o token do cabeçalho Authorization da req
+
         if (token != null && token.startsWith("Bearer")) {
             token = token.substring(7); // remove o prefixo "Bearer" para obter o token puro
 
