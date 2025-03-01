@@ -7,11 +7,10 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-register',
-  standalone: true,
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css'],
-  providers: [AuthService], // Certifique-se de que AuthService está aqui
-  imports: [ReactiveFormsModule, CommonModule, HttpClientModule] // ✅ Necessário para o uso de forms reativos
+  styleUrl: './register.component.scss',
+  providers: [AuthService], 
+  imports: [ReactiveFormsModule, CommonModule, HttpClientModule] 
 })
 
 export class RegisterComponent {
@@ -36,7 +35,7 @@ export class RegisterComponent {
   // Método chamado ao submeter o formulário
   onSubmit() {
     if (this.registroForm.invalid) {
-      this.registroForm.markAllAsTouched(); // ✅ Exibe os erros ao usuário antes de submeter
+      this.registroForm.markAllAsTouched(); // Exibe os erros ao usuário antes de enviar
       return;
     }
   

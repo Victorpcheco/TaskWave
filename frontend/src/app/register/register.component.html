@@ -1,37 +1,47 @@
-<form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
-
-    <div>
-      <!-- O atributo 'for' associa este label ao input com id 'nome' -->
-      <!-- Isso permite que, ao clicar no texto 'Nome:', o campo de entrada seja focado automaticamente -->
-      <label for="nome">Nome:</label>
-      <input id="nome" formControlName="nome" />
-      
-      <!-- Exibe mensagem de erro se o campo for inválido e já tiver sido tocado -->
-      <div *ngIf="registroForm.get('nome')?.invalid && registroForm.get('nome')?.touched">
-        Nome é obrigatório.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tela de Registro</title>
+</head>
+<body>
+  <div class="container">
+      <div class="container-left">
+        <h1>Welcome Back!</h1>
+        <p>To Keep connected with us</p>
       </div>
-    </div>
-  
-    
-    <div>
-      <label for="email">Email:</label>
-      <input id="email" formControlName="email" />
-      
-      <div *ngIf="registroForm.get('email')?.invalid && registroForm.get('email')?.touched">
-        Por favor, insira um email válido.
+      <div class="register-form">
+        <h2>Create Account</h2>
+        <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+          <div>
+            <!-- O atributo 'for' associa este label ao input com id 'nome' -->
+            <!-- Isso permite que, ao clicar no texto 'Nome:', o campo de entrada seja focado automaticamente -->
+            <input id="nome" formControlName="nome" placeholder="Nome" />
+            <!-- Exibe mensagem de erro se o campo for inválido e já tiver sido tocado -->
+            <div class="notification-error" *ngIf="registroForm.get('nome')?.invalid && registroForm.get('nome')?.touched">
+              Nome é obrigatório.
+            </div>
+          </div>
+          <div>
+            <input id="email" formControlName="email" placeholder="Email" />
+            <div class="notification-error" *ngIf="registroForm.get('email')?.invalid && registroForm.get('email')?.touched">
+              Por favor, insira um email válido.
+            </div>
+          </div>
+          <div>
+            <input id="senha" type="password" formControlName="senha" placeholder="senha" />
+            <div class="notification-error" *ngIf="registroForm.get('senha')?.invalid && registroForm.get('senha')?.touched">
+              A senha deve conter 6 caracteres mínimos.
+              Sendo 1 especial!
+            </div>
+          </div>
+          <button type="submit" [disabled]="registroForm.invalid">Register</button>
+          <p class="or"> Ou use seu email para login</p>
+          <button class="email-login"> Entrar com Email</button>
+        </form>
       </div>
-    </div>
+  </div>
   
-    <div>
-      <label for="senha">Senha:</label>
-      <input id="senha" type="password" formControlName="senha" />
-      
-      <div *ngIf="registroForm.get('senha')?.invalid && registroForm.get('senha')?.touched">
-        A senha deve ter pelo menos 6 caracteres.
-      </div>
-    </div>
-  
-    <button type="submit" [disabled]="registroForm.invalid">Registrar</button>
-  
-  </form>
-  
+</body>
+</html>

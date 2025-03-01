@@ -1,42 +1,105 @@
-form {
-    max-width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  div {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-  }
-  
-  button {
-    width: 100%;
-    padding: 10px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
-  div[ngIf] {
-    color: red;
-    font-size: 0.8em;
-  }
+body {
+
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(235, 235, 235);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden; // arredondamento
+  width: 800px;
+}
+
+.container-left {
+  background-color: rgb(69, 114, 99);
+  color: azure;
+  width: 40%;
+  padding: 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container-left h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+.container-left p {
+  margin: 10px 0 0;
+  font-size: 1.2em;
+}
+
+.register-form {
+  padding: 40px;
+  color: #333;
+  width: 50%;
+}
+
+.register-form h2 {
+  font-size: 40px;
+  text-align: center;
+}
+
+.register-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 20px;
+
+}
+
+.register-form button {
+
+  width: 100%;
+  padding: 10px;
+  background-color:rgb(69, 114, 99);
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+
+}
+
+.register-form button.email-login {
+  background-color: #fff;
+  color:rgb(69, 114, 99);
+  border: 1px solid rgb(69, 114, 99);
+}
+
+.register-form .or {
+  text-align: center;
+  margin: 5px 0;
+  color: #666;
+}
+
+.notification-error {
+  color: rgba(255, 0, 0, 0.538);
+}
+
+
+
+/*.register-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 10px;
+}*/
+
