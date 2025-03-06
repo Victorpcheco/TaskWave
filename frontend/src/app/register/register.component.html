@@ -11,6 +11,7 @@
         <h1>Welcome Back!</h1>
         <p>To Keep connected with us</p>
       </div>
+      <app-notification></app-notification> <!-- Adiciona o componente de notificação -->
       <div class="register-form">
         <h2>Create Account</h2>
         <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
@@ -36,7 +37,7 @@
               Sendo 1 especial!
             </div>
           </div>
-          <button type="submit" [disabled]="registroForm.invalid">Register</button>
+          <button type="submit">Register</button>
           <p class="or"> Ou use seu email para login</p>
           <button class="email-login"> Entrar com Email</button>
         </form>
